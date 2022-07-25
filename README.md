@@ -25,17 +25,17 @@ $$
 
 then
 
-$$
+$
     \begin{Vmatrix}M\end{Vmatrix} = 
     \begin{Vmatrix}
     \begin{pmatrix}
-        \begin{Vmatrix} m_1 \end{Vmatrix}_\text{in} &
-        \begin{Vmatrix} m_2 \end{Vmatrix}_\text{in} &
+        \begin{Vmatrix} m_1 \end{Vmatrix}_{in} &
+        \begin{Vmatrix} m_2 \end{Vmatrix}_{in} &
         ... &
-        \begin{Vmatrix} m_n \end{Vmatrix}_\text{in} &
+        \begin{Vmatrix} m_n \end{Vmatrix}_{in} &
     \end{pmatrix}
-    \end{Vmatrix}_\text{out}
-$$
+    \end{Vmatrix}_{out}
+$
 
 And the problem is:
 
