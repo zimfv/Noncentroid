@@ -11,7 +11,7 @@ Description of variables:
 Let's define function
 
 $$
-    F(A, D, w) = \sum\limits_{i=1}^n \cfrac{\sum\limits_{j=1}^N w_j D_{ij}}{\sum\limits_{j=1}^N {w_jA_{ji}}}
+    F(A, D, w) = \sum\limits_{i=1}^n \cfrac{\sum\limits_{j=1}^N w_j (DA)_{ij}}{\sum\limits_{j=1}^N {w_jA_{ji}}}
 $$
 
 
