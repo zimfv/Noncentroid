@@ -4,23 +4,46 @@ from scipy.optimize import minimize
 
 
 def probability_matrix_to_vector(matrix):
+    # Convert probability matrix to vector containing linear independent values.
     N, n = matrix.shape
     vector = matrix[:, :-1].reshape(N*n-N)
     return vector
 
 
 def vector_to_probability_matrix(vector, N, n):
+    # Convert vector containing linear independent values to probability matrix shape (N, n)
     matrix = vector.reshape((N, n-1))
     matrix = np.concatenate([matrix, (1-matrix.sum(axis=1)).reshape((N, 1))], axis=1)
     return matrix
 
 
-def target_function(x, weights, dists, N, n_clusters, norm_in=norms.L2, norm_out=norms.L1):
-    A = vector_to_probability_matrix(x, N, n_clusters)
-    inner_matrix = dists @ A
-    inner_matrix = norm_in(inner_matrix, axis=1) * weights
-    result = norm_out(inner_matrix)
-    return result
+def PSDP(labels, distances, weights):
+    """
+    Returns the pairwise squared deviations of points in the same cluster.
+    
+    Parameters:
+    -----------
+    labels : numpy matrix shape (N, n)
+        Probabilities for n clusters for each N elements.
+    
+    distances : numpy matrix shape (N, n)
+        Distance matrix: that is symmetric, main diagonal is zero.
+        
+    weights : numpy array length N
+        Weights of N elements.
+    
+    Returns:
+    --------
+    val : float
+        The pairwise squared deviations of points in the same cluster.
+    """
+    lw = labels*weights.reshape([len(weights), 1])
+    val = (distances*distances) @ lw
+    cw = val.sum(axis=0)
+    val = ((distances**2)@val).sum(axis=0)
+    val = val/cw
+    val = val.sum()
+    return val
 
 
 def clusterize(dists, weights, n_clusters, norm_in=norms.L2, norm_out=norms.L1, 
@@ -71,7 +94,7 @@ def clusterize(dists, weights, n_clusters, norm_in=norms.L2, norm_out=norms.L1,
     labels0 = labels0 / labels0.sum(axis=1).reshape((N, 1))
     
     x0 = probability_matrix_to_vector(labels0)
-    fun = lambda x: target_function(x, weights, dists, N, n_clusters, norm_in=norm_in, norm_out=norm_out)
+    fun = lambda x: PSDP(vector_to_probability_matrix(x, N, n_clusters), dists, weights)
     bounds = np.array([np.zeros(len(x0)), np.ones(len(x0))]).transpose()
     res = minimize(fun, x0, method=method, tol=tol, bounds=bounds)
     x = res.x

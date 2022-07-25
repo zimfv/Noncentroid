@@ -7,36 +7,21 @@ Description of variables:
 - $n$ - number of clusters (integer)
 - $A$ - matrix of probabilities (matrix size $N\times n$)
 
-Norms:
-- $||\cdot||_{in}$ - inner norm. Default is $L_2$
-- $||\cdot||_{out}$ - outter norm. Default is $L_1$
 
-Let us 
-
+Let us $M$ is matrix size $(k, m)$, then 
 $$
-    M = 
-    \begin{pmatrix}
-        m_1 \\ 
-        m_2 \\ 
-        ... \\ 
-        m_n
-    \end{pmatrix}
+    ||M|| = \sum_{i=1}^k\sum_{j=1}^m M_{ij}^2
 $$
 
-then let's define $||\cdot||$ as
+So let's define function
 
 $$
-    ||M|| = 
-    ||(
-        || m_1 ||_{in}, 
-        || m_2 ||_{in}, 
-        ..., 
-        || m_n ||_{in} 
-    )||_{out}
+    F(A, D, w) = ||(Aw^T)@(D*D)||
 $$
+
 
 And the problem is:
 
 $$
-    ||w*(AD)||\to\min
+    F(A, D, w)\to_A\min
 $$
