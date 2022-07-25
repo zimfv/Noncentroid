@@ -12,9 +12,17 @@ Norms:
 - $||\cdot||_{out}$ - outter norm. Default is $L_1$
 
 Let us 
+
 $$
-    M = \begin{pmatrix}m_1\\ m_2\\ ...\\ m_n\end{pmatrix}
+    M = 
+    \begin{pmatrix}
+        m_1\\ 
+        m_2\\ 
+        ...\\ 
+        m_n
+    \end{pmatrix}
 $$
+
 then
 $$
     ||M|| = ||(||m_1||_{in}, ||m_2||_{in}, ..., ||m_n||_{in})||_{out}
