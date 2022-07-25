@@ -26,15 +26,13 @@ $$
 then let's define $||\cdot||$ as
 
 $$
-    \begin{Vmatrix}M\end{Vmatrix} = 
-    \left|\left|
-    \begin{pmatrix}
+    ||M|| = 
+    \begin{Vmatrix}
         \begin{Vmatrix} m_1 \end{Vmatrix}_{in} \\
         \begin{Vmatrix} m_2 \end{Vmatrix}_{in} \\
         ... \\
         \begin{Vmatrix} m_n \end{Vmatrix}_{in} 
-    \end{pmatrix}
-    \right|\right||_{out}
+    \end{Vmatrix}_{out}
 $$
 
 And the problem is:
