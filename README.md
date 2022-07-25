@@ -24,11 +24,13 @@ $$
 $$
 
 then
+
 $$
     ||M|| = ||(||m_1||_{in}, ||m_2||_{in}, ..., ||m_n||_{in})||_{out}
 $$
 
-The problem is:
+And the problem is:
+
 $$
     ||w*(AD)||\to\min
 $$
