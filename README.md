@@ -27,12 +27,12 @@ then let's define $||\cdot||$ as
 
 $$
     ||M|| = 
-    \begin{pmatrix}
-        \begin{Vmatrix} m_1 \end{Vmatrix}_{in} \\
-        \begin{Vmatrix} m_2 \end{Vmatrix}_{in} \\
-        ... \\
+    ||
+        \begin{Vmatrix} m_1 \end{Vmatrix}_{in} ,\;
+        \begin{Vmatrix} m_2 \end{Vmatrix}_{in} ,\;
+        ... ,\;
         \begin{Vmatrix} m_n \end{Vmatrix}_{in} 
-    \end{pmatrix}_{out}
+    ||_{out}
 $$
 
 And the problem is:
