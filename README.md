@@ -17,8 +17,9 @@ $$
     \sum\limits_{j=1}^N w_j (DA)_{ij}
 $$
 
+Let's call that the pairwise squared deviations of points (PSDP).
 
-And the problem is:
+The problem is to find $A$, s.t. PSDP value be minimal.
 
 $$
     F(A, D, w)\to_A\min
