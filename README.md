@@ -25,7 +25,7 @@ $$
 
 then
 
-$
+$$
     \begin{Vmatrix}M\end{Vmatrix} = 
     \begin{Vmatrix}
     \begin{pmatrix}
@@ -35,7 +35,7 @@ $
         \begin{Vmatrix} m_n \end{Vmatrix}_{in} &
     \end{pmatrix}
     \end{Vmatrix}_{out}
-$
+$$
 
 And the problem is:
 
