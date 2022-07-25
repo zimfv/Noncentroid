@@ -32,7 +32,7 @@ $$
         || m_2 ||_{in}, 
         ..., 
         || m_n ||_{in} 
-    )||_o_u_t
+    )||_{out}
 $$
 
 And the problem is:
