@@ -8,16 +8,10 @@ Description of variables:
 - $A$ - matrix of probabilities (matrix size $N\times n$)
 
 
-Let us $M$ is matrix size $(k, m)$, then 
+Let's define function
 
 $$
-    ||M|| = \sum_{i=1}^k\sum_{j=1}^m M_{ij}^2
-$$
-
-So let's define function
-
-$$
-    F(A, D, w) = ||(Aw^T)(D*D)||
+    F(A, D, w) = \sum_{i=1}^n \cfrac{1}{\sum_{j=1}^N w_jA_{ji}} \sum_{j=1}^N w_j D_{ij}
 $$
 
 
