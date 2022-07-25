@@ -16,7 +16,7 @@ $$
 So let's define function
 
 $$
-    F(A, D, w) = ||(Aw^T)@(D*D)||
+    F(A, D, w) = ||(Aw^T)(D*D)||
 $$
 
 
