@@ -28,10 +28,10 @@ then let's define $||\cdot||$ as
 $$
     ||M|| = 
     ||
-        \begin{Vmatrix} m_1 \end{Vmatrix}_{in}, 
-        \begin{Vmatrix} m_2 \end{Vmatrix}_{in}, 
+        || m_1 ||_{in}, 
+        || m_2 ||_{in}, 
         ..., 
-        \begin{Vmatrix} m_n \end{Vmatrix}_{in} 
+        || m_n ||_{in} 
     ||_{out}
 $$
 
