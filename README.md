@@ -27,14 +27,14 @@ then let's define $||\cdot||$ as
 
 $$
     \begin{Vmatrix}M\end{Vmatrix} = 
-    \left||
+    \left|\left|
     \begin{pmatrix}
         \begin{Vmatrix} m_1 \end{Vmatrix}_{in} \\
         \begin{Vmatrix} m_2 \end{Vmatrix}_{in} \\
         ... \\
         \begin{Vmatrix} m_n \end{Vmatrix}_{in} 
     \end{pmatrix}
-    \right||_{out}
+    \right|\right||_{out}
 $$
 
 And the problem is:
