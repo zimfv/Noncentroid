@@ -9,6 +9,7 @@ Description of variables:
 
 
 Let us $M$ is matrix size $(k, m)$, then 
+
 $$
     ||M|| = \sum_{i=1}^k\sum_{j=1}^m M_{ij}^2
 $$
