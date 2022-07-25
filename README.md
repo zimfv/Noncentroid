@@ -26,7 +26,15 @@ $$
 then
 
 $$
-    ||M|| = ||(||m_1||_{in}, ||m_2||_{in}, ..., ||m_n||_{in})||_{out}
+    \begin{Vmatrix}M\end{Vmatrix} = 
+    \begin{Vmatrix}
+    \begin{pmatrix}
+        ||m_1||_{in} &
+        ||m_2||_{in} &
+        ... &
+        ||m_n||_{in}
+    \end{pmatrix}
+    \end{Vmatrix}_{out}
 $$
 
 And the problem is:
