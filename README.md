@@ -19,7 +19,7 @@ $$
 
 Let's call that the pairwise squared deviations of points (PSDP).
 
-The problem is to find $A$, s.t. PSDP value be minimal.
+The problem is to find $A$, s.t. PSDP value be minimal:
 
 $$
     F(A, D, w)\to_A\min
