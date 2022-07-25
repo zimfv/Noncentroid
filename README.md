@@ -5,7 +5,7 @@ Description of variables:
 - $w$ - weight of each object (vector length $N$)
 - $D$ - matrix of distances (matrix size $N\times N$)
 - $n$ - number of clusters (integer)
-- $A$ - matrix of probabilities (matrix size $n\times N$)
+- $A$ - matrix of probabilities (matrix size $N\times n$)
 
 Norms:
 - $||\cdot||_{in}$ - inner norm. Default is $L_2$
