@@ -27,12 +27,12 @@ then let's define $||\cdot||$ as
 
 $$
     ||M|| = 
-    ||
+    ||(
         || m_1 ||_{in}, 
         || m_2 ||_{in}, 
         ..., 
         || m_n ||_{in} 
-    ||_{out}
+    )||_{out}
 $$
 
 And the problem is:
