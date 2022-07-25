@@ -1,7 +1,7 @@
 import numpy as np
 from itertools import permutations
 
-def clester_to_probability(clusters, n_clusters=None):
+def cluster_to_probability(clusters, n_clusters=None):
     """
     Returns probabity matrix for clusters:
     1 - for cluster element, and 0 - for other.
