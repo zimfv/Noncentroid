@@ -14,7 +14,7 @@ $$
     F(A, D, w) = 
     \sum\limits_{i=1}^n 
     \cfrac{1}{\sum\limits_{j=1}^N {w_jA_{ji}}} 
-    \sum\limits_{j=1}^N w_j (DA)_{ij}
+    \sum\limits_{j=1}^N w_j ((DA)_{ij})^2
 $$
 
 Let's call that the pairwise squared deviations of points (PSDP).
