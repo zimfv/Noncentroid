@@ -1,4 +1,4 @@
-# Mathematical view:
+# Mathematical view
 
 Description of variables:
 - $N$ - number of objects (integer).
@@ -24,3 +24,10 @@ The problem is to find $A$, s.t. PSDP value be minimal:
 $$
     F(A, D, w)\to_A\min
 $$
+
+
+# Why is that useful
+
+There are problems, where distance matric is specific. And so that's hard to recalcelate distances and centroids.
+
+So that will be good to use just precalculated distance matrix and to not calculate centroids.
