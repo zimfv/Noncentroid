@@ -1,6 +1,8 @@
 import numpy as np
 from package import norms
 from scipy.optimize import minimize
+from package.opt import MinimizeByLabels
+
 
 
 def probability_matrix_to_vector(matrix):
@@ -46,10 +48,12 @@ def PSDP(labels, distances, weights):
     return val
 
 
-def clusterize(dists, weights, n_clusters, norm_in=norms.L2, norm_out=norms.L1, 
-               labels0=None, method=None, tol=None):
+def clusterize_probs(dists, weights, n_clusters, 
+                     norm_in=norms.L2, norm_out=norms.L1, 
+                     labels0=None, method=None, tol=None):
     """
     Clusterize elements using distance matrix and weights.
+    Returns probability matrix.
     
     Parameters:
     -----------
@@ -62,10 +66,10 @@ def clusterize(dists, weights, n_clusters, norm_in=norms.L2, norm_out=norms.L1,
     n_clusters : int
         The number of clusters.
     
-    norm_in : Matrix or vector norm
+    norm_in : Matrix or vector norm, optional
         Inner norm.
     
-    norm_out : Matrix or vector norm
+    norm_out : Matrix or vector norm, optional
         Outter norm.
         
     labels0 : matrix shape (N, n_clusters) or None
@@ -104,3 +108,49 @@ def clusterize(dists, weights, n_clusters, norm_in=norms.L2, norm_out=norms.L1,
     labels = labels / labels.sum(axis=1).reshape((N, 1))
     
     return labels
+
+
+def clusterize(dists, weights, n_clusters, clusters0=None, max_iters=100, print_iters=False):
+    """
+    Clusterize elements using distance matrix and weights by labels optimization.
+    Returns cluster number for eacgh element.
+    
+    Parameters:
+    -----------
+    dists : symmetric matrix shape (N, N)
+        Distances between elements, where N is number of elements.
+    
+    weights : vector length N
+        Weights of elements.
+    
+    n_clusters : int
+        The number of clusters.
+    
+    clusters0 : vector length N or None, optional
+        Clusters for first iteration.
+        That will be random generated if that is None.
+        
+    max_iters: int, optional
+        Maximal number of iterations for minimizing.
+        
+    print_iters : bool, optional
+        Print status and time for each minimizing iteration.
+        
+    Returns:
+    --------
+    clusters : array length N
+        Cluster for each element.
+    """
+    N = len(weights)
+    if clusters0 is None:
+        clusters0 = np.random.randint(n_clusters, size=N)
+    labels0 = np.zeros((N, n_clusters), dtype=int)
+    labels0[np.arange(N), clusters0] = 1
+    
+    f = lambda m: PSDP(m, dists, weights)
+    res = MinimizeByLabels(f, labels0, max_iters=max_iters, print_iters=print_iters)
+    labels = res.m
+    
+    clusters = np.argmax(labels, axis=1)
+    
+    return clusters
